@@ -1,7 +1,8 @@
 import React from 'react'
-import Select from './shared/Select'
-import TextInput from './shared/TextInput'
-import LANGUAGES from './constants/languages.constants'
+import Select from '../shared/select/Select'
+import TextInput from '../shared/textInput/TextInput'
+import LANGUAGES from '../constants/languages.constants'
+import { Grid } from '@material-ui/core'
 
 interface SearchProps {
   language: string
@@ -15,7 +16,7 @@ const Search = ({ language, searchText, onLanguageChange, onSearchTextChange }: 
   const languages = [{ value: "", label: 'ALL' }, ...LANGUAGES]
 
   return (
-    <div>
+    <Grid container justify="center">
       <TextInput 
         label="Search Repo" 
         value={searchText} 
@@ -29,7 +30,7 @@ const Search = ({ language, searchText, onLanguageChange, onSearchTextChange }: 
         onChange={value => onLanguageChange(value)}
         />
 
-    </div>
+    </Grid>
   )
 }
 

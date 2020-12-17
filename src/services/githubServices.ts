@@ -20,6 +20,14 @@ export function searchRepos(searchText: string, language?: string){
   return axiosGetCancellable(`api/search?q=${query}&sort=stars&order=desc`)
 }
 
+export const getRepo = (id: any) => {
+  return axios.get(`repositories/${id}`, config)
+}
+
+export const getProfile = (username: any) => {
+  return axios.get(`users/${username}`, config)
+}
+
 const isServer = () => {
   return typeof window === "undefined"
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { TextField } from '@material-ui/core'
+import { useStyles } from './styles'
 
 interface TextInputProps{
   label: string
@@ -8,10 +10,10 @@ interface TextInputProps{
 }
 
 function TextInput({ label, value, onChange, placeholder } : TextInputProps) {
+  const classes = useStyles()
   return (
     <div>
-      {label}
-      <input value={value} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
+      <TextField variant="outlined" label={label} className={classes.input} value={value} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
     </div>
   )
 }
