@@ -4,6 +4,7 @@ import React from 'react'
 import { Repo } from '../repoList/RepoList'
 import { useStyles } from './styles'
 import { Share, Star } from '@material-ui/icons'
+import { motion } from 'framer-motion'
 
 interface RepoItemProps {
   repo: Repo
@@ -18,8 +19,23 @@ function RepoItem({ repo }: RepoItemProps) {
     return description
   }
 
+  const cardVariants={
+    hidden: {
+      opacity: 0,
+      y: 100
+
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: .5
+      }
+    }
+  }
+
   return (
-    <Grid item lg={4} md={6} xs={12}>
+    <Grid component={motion.div} initial="hidden" animate="visible" variants={cardVariants} item lg={4} md={6} xs={12}>
       <Card className={classes.card}>
         <Link href={`/repo/${repo.id}`}>
           <Typography className={classes.label}>{repo.name}</Typography>
