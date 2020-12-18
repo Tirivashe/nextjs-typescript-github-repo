@@ -39,5 +39,17 @@ export const useStyles = makeStyles(() => ({
     '&:hover': {
       transform: "scale(1.3)"
     }
+  },
+
+  label: {
+    marginLeft: "20px", 
+    marginTop: "10px", 
+    textDecoration: "none",
+    textTransform: "capitalize",
+    cursor: "pointer",
+    color: "black",
+    '&:hover':{
+      color: teal["A700"]
+    },
   }
 }))

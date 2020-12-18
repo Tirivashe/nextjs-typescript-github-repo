@@ -11,17 +11,5 @@ import { teal } from '@material-ui/core/colors'
     backgroundColor: teal["A700"],
     boxShadow: "none",
     marginBottom: "1rem"
-  },
-
-  link: {
-    color: "white",
-    fontFamily: "Andika New Basic"
-  },
-
-   nav: {
-     display: "flex",
-     width: "25%",
-     justifyContent: "space-around",
-     alignItems: "center"
-   }
+  }
  })

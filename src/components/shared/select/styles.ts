@@ -18,11 +18,16 @@ export const useStyles = makeStyles({
       },
       "&.Mui-focused fieldset":{
         borderColor: primaryColor
-      },
-      "& fieldset:hover":{
-        borderColor: "red"
       }
     },
-    
+  },
+
+  select: {
+    '& fieldset.MuiOutlinedInput-notchedOutline': {
+      borderColor: primaryColor,
+      '&:hover': {
+        borderColor: primaryColor
+      }
+    }
   }
 })

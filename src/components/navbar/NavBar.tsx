@@ -1,5 +1,4 @@
-import { AppBar, Button, Toolbar } from '@material-ui/core'
-import Link from 'next/link'
+import { AppBar,Toolbar, Typography } from '@material-ui/core'
 import { useStyles } from './styles'
 
 function NavBar() {
@@ -8,17 +7,7 @@ function NavBar() {
     <div className={classes.root}>
       <AppBar className={classes.appbar} position="static">
         <Toolbar>
-          <nav className={classes.nav}>
-            <Link href="/">
-              <Button className={classes.link}>Github Repos 📦</Button>
-            </Link>
-            <Link href="/">
-              <Button className={classes.link}>Home</Button>
-            </Link>
-            <Link href="/about">
-              <Button className={classes.link}>About</Button>
-            </Link>
-          </nav>
+          <Typography>Github Repos 📦</Typography>
         </Toolbar>
       </AppBar>
     </div>
@@ -26,19 +15,3 @@ function NavBar() {
 }
 
 export default NavBar
-
-
-{/* <nav>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-      </ul>
-    </nav> */}

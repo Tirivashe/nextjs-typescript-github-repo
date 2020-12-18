@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextField } from '@material-ui/core'
+import { Grid, TextField } from '@material-ui/core'
 import { useStyles } from './styles'
 
 interface TextInputProps{
@@ -12,9 +12,9 @@ interface TextInputProps{
 function TextInput({ label, value, onChange, placeholder } : TextInputProps) {
   const classes = useStyles()
   return (
-    <div>
+    <Grid item>
       <TextField variant="outlined" label={label} className={classes.input} value={value} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
-    </div>
+    </Grid>
   )
 }
 

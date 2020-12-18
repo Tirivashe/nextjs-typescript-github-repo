@@ -1,12 +1,37 @@
-import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
+import { Button, Typography } from '@material-ui/core'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 import { getProfile } from '../../services/githubServices'
+import { useStyles } from './styles'
 
 function Profile({ profile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const classes = useStyles()
   return (
-    <div>
-      <h3>{JSON.stringify(profile, null , 2)}</h3>
+    <div className={classes.root}>
+      <Head>
+        <title>GitHub Repositories | User Profile</title>
+      </Head>
+      <Link href="/">
+        <Button variant="contained" size="large" className={classes.button}>Back</Button>
+      </Link>
+      <div>
+        <Typography variant="h3">{profile.name}</Typography>
+        { profile.bio &&<Typography variant="body1"> Bio: {profile.bio}</Typography>}
+        { profile.email &&<Typography variant="body1"> Email: {profile.email}</Typography>}
+        { profile.blog &&<Typography variant="body1"> Blog: {profile.blog}</Typography>}
+        { profile.location &&<Typography variant="body1"> Location: {profile.location}</Typography>}
+      </div>
+      <div>
+        <Typography variant="body1"> Followers: {profile.followers}</Typography>
+        <Typography variant="body1"> Following: {profile.following}</Typography>
+      </div>
+      <a href={profile.html_url} target="_blank" style={{ textDecoration: "none"}}>
+        <Button variant="contained" size="large" className={classes.buttonLink}>View On GitHub</Button>
+      </a>
     </div>
+    
   )
 }
 

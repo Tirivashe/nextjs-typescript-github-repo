@@ -22,7 +22,7 @@ interface RepoListProps {
 function RepoList({ repos, loading }: RepoListProps) {
   const classes = useStyles()
  if(loading){
-   return <CircularProgress />
+   return <CircularProgress size={100} className={classes.loader}/>
  }
 
  if(!repos || repos.length < 1){

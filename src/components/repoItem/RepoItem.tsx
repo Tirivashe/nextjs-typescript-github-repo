@@ -21,11 +21,14 @@ function RepoItem({ repo }: RepoItemProps) {
   return (
     <Grid item lg={4} md={6} xs={12}>
       <Card className={classes.card}>
+        <Link href={`/repo/${repo.id}`}>
+          <Typography className={classes.label}>{repo.name}</Typography>
+        </Link>
         <CardHeader
           className={classes.cardHeader} 
           title={
-            <Link href={`/repo/${repo.id}`}>
-              <a className={classes.repoName}>{repo.name}</a>
+            <Link href={`/profile/${repo.owner.login}`}>
+              <a className={classes.repoName}>{repo.owner.login}</a>
             </Link>
             } 
           avatar={

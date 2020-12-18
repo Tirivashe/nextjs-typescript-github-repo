@@ -3,7 +3,7 @@ import { teal } from '@material-ui/core/colors'
 
 export const useStyles = makeStyles({
   input: {
-    width: "200px",
+    width: "400px",
     marginBottom: "1rem",
     '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline':{
       borderColor: teal["A700"]
