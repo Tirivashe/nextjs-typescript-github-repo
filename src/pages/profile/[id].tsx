@@ -18,6 +18,7 @@ function Profile({ profile }: InferGetServerSidePropsType<typeof getServerSidePr
       </Link>
       <div>
         <Typography variant="h3">{profile.name}</Typography>
+        <img src={profile.avatar_url} width="50" height="50" alt="Picture"/>
         { profile.bio &&<Typography variant="body1"> Bio: {profile.bio}</Typography>}
         { profile.email &&<Typography variant="body1"> Email: {profile.email}</Typography>}
         { profile.blog &&<Typography variant="body1"> Blog: {profile.blog}</Typography>}

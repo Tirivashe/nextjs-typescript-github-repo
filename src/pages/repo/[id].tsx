@@ -19,7 +19,6 @@ function Repo({ repo }: InferGetServerSidePropsType<typeof getServerSideProps>) 
       
       <div>
         <Typography variant="h3">{repo.name}</Typography>
-        <img src={repo.owner.avatar_url} width="50" height="50" alt="Picture"/>
         <Typography variant="body1">{repo.description}</Typography>
         <Typography variant="h5" style={{ color: "#00bfa5" }}>{repo.language}</Typography>
       </div>
