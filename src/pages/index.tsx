@@ -6,7 +6,7 @@ import RepoList from '../components/repoList/RepoList'
 import Search from '../components/search/Search'
 import { randomWord } from '../helpers/randomWord'
 import { searchRepos } from '../services/githubServices'
-import { useStyles } from './index.styles'
+import { useStyles } from '../components/pageStyles/index.styles'
 
 const Index = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const [searchText, setSearchText] = useState<string>(props.searchText)

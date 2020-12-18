@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 import { getProfile } from '../../services/githubServices'
-import { useStyles } from './styles'
+import { useStyles } from '../../components/pageStyles/profile.styles'
 
 function Profile({ profile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const classes = useStyles()

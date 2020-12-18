@@ -16,7 +16,7 @@ const Search = ({ language, searchText, onLanguageChange, onSearchTextChange }: 
   const languages = [{ value: "", label: 'ALL' }, ...LANGUAGES]
 
   return (
-    <Grid container justify="center" spacing={3}>
+    <Grid style={{ width: "70%", margin: "0 auto" }} container justify="center" spacing={3}>
       <TextInput 
         label="Search Repo" 
         value={searchText} 

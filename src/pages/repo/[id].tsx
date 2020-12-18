@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 import { getRepo } from '../../services/githubServices'
-import { useStyles } from './styles'
+import { useStyles } from '../../components/pageStyles/repo.styles'
 
 function Repo({ repo }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const classes = useStyles()
